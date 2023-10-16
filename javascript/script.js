@@ -1,20 +1,30 @@
+//MINESTONE1
 
-let utenteProdotti = prompt('Quanti prodotti vuoi acquistare?')
-console.log(utenteProdotti)
-const lista =[]
+let utenteProdotti = ''
+let lista =[]
 
-let basta = false;
-let i = 0;
 
-while(i < lista.length){
 
-    lista.push (utenteProdotti)
-    console.log (lista)
-    
-    if(utenteProdotti === stop){
-        basta = true;
+
+while(utenteProdotti !== 'stop') {
+    utenteProdotti = prompt('Quanti prodotti vuoi acquistare?');   
+        
+    if(utenteProdotti !== 'stop' && utenteProdotti !== ''){
+        lista.push(utenteProdotti);
     }
-    i++;
-
+    
+    console.log (utenteProdotti);
 }
-console.log (utenteProdotti)
+
+console.log (lista);
+
+
+const listaEl = document.getElementById('richiesta')
+
+
+for( i = 0; i < lista.length; i++ ){
+    const listaUtenteEl = document.createElement ("li");
+    listaUtenteEl.innerHTML = lista[i];
+    
+    listaEl.appendChild(listaUtenteEl);
+}
